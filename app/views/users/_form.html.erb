@@ -1,7 +1,4 @@
-
-
-
-  <%= form_for(@user, :html => {class: "ui form", role: "form"}) do |f| %>
+<%= form_for(@user, :html => {class: "ui form", role: "form"}) do |f| %>
   <%= f.label "Profile Picture" %>
       <%= f.file_field :avatar %>
       <p></p>
@@ -27,5 +24,6 @@
     <%= f.button "Signup", class: "ui orange submit button" %>
     <br><br>
     <p>Already signed up? <%= link_to "Login", login_path %> </p>
+    <br>
 
 <% end %>

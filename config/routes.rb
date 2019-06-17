@@ -7,7 +7,12 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
   post 'message', to: 'messages#create'
   get 'signup', to: 'users#new'
+  get 'my_friends', to: 'users#my_friends'
+  get 'search_friends', to: 'users#search'
+  post 'add_friend', to: 'users#add_friend'
 
+  resources :users, only: [:show]
+  resources :friendships
   resources :users, except: [:new]
 
 

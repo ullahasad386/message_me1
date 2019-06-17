@@ -28,6 +28,16 @@ class UsersController < ApplicationController
   def edit
   end
 
+  def my_friends
+    @friendships = current_user.friends
+  end
+
+  def search
+    respond_to do |format|
+      format.js { render partial: 'friends/result' }
+    end
+  end
+
   private
   def user_params
     params.require(:user).permit(:username, :password, :avatar)
