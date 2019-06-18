@@ -14,7 +14,15 @@
       <div class="ui dimmer">
         <div class="content">
           <div class="center">
-            <div class="ui inverted button">Add Friend</div>
+            <div class="ui inverted button">  <% if current_user.not_friends_with?(user.id) %>
+                <%= link_to "Add friend",
+                    add_friend_path(user: current_user, friend: user), method: :post %>
+              <% else %>
+              <span>
+                You are friends
+              </span>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>
