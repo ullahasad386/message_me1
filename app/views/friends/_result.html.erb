@@ -12,7 +12,7 @@
     <% @users.each do |user| %>
     <tr>
       <td><strong>Name:</strong> <%= user.username %></td>
-      <td><strong>Profile:</strong> <%= link_to "View Profile", "#", class: "ui orange submit button" %>
+      <td><strong>Profile:</strong> <%= link_to "View Profile", user_path(user), class: "ui orange submit button" %>
         <% if current_user.not_friends_with?(user.id) %>
           <%= link_to "Add as my friend",
                   add_friend_path(user: current_user, friend: user), class: "ui orange submit button", method: :post %>

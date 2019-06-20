@@ -1,3 +1,4 @@
+
 <div align="center">
 <h1 align="center">All MessageMe Users</h1>
 
@@ -7,6 +8,7 @@
 </div>
 <br>
 
+
 <% @users.each do |user| %>
 <div class="ui special centered cards">
   <div class="card">
@@ -14,9 +16,11 @@
       <div class="ui dimmer">
         <div class="content">
           <div class="center">
-            <div class="ui inverted button">  <% if current_user.not_friends_with?(user.id) %>
+            <div class="ui inverted button">
+                <% if current_user.not_friends_with?(user.id) %>
                 <%= link_to "Add friend",
                     add_friend_path(user: current_user, friend: user), method: :post %>
+      
               <% else %>
               <span>
                 You are friends

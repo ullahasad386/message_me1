@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :signed_up, only: [:new, :create]
-  before_action :require_user, except: [:create]
+  before_action :require_user, except: [:new, :create]
   def new
     @user = User.new
 
